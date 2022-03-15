@@ -3,66 +3,93 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>Trang đăng lý</title>
+        <link rel="stylesheet" href="dangky.css"> 
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     </head>
     <body>
-        <h1>Trang đăng ký thành viên</h1>
-        <form action="xuly.php" method="POST">
-            <table cellpadding="0" cellspacing="0" border="1">
-                <tr>
-                    <td>
-                        Tên đăng nhập : 
-                    </td>
-                    <td>
-                        <input type="text" name="txtUsername" size="50" />
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        Mật khẩu :
-                    </td>
-                    <td>
-                        <input type="password" name="txtPassword" size="50" />
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        Email :
-                    </td>
-                    <td>
-                        <input type="text" name="txtEmail" size="50" />
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        Họ và tên :
-                    </td>
-                    <td>
-                        <input type="text" name="txtFullname" size="50" />
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        Ngày sinh :
-                    </td>
-                    <td>
-                        <input type="text" name="txtBirthday" size="50" />
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        Giới tính :
-                    </td>
-                    <td>
-                        <select name="txtSex">
+      <section class="vh-100 gradient-custom">
+        <div class="container py-5 h-100">
+          <div class="row justify-content-center align-items-center h-100">
+            <div class="col-12 col-lg-9 col-xl-7">
+              <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+                <div class="card-body p-4 p-md-5">
+                  <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Đăng ký</h3>
+                  <form action="xuly.php" method="POST">
+
+                    <div class="row">
+                      <div class="col-md-6 mb-4">
+
+                        <div class="form-outline">
+                          <input type="text" id="firstName" name="txtUsername" class="form-control form-control-lg" />
+                          <label class="form-label" for="firstName">Tên đăng nhập</label>
+                        </div>
+
+                      </div>
+                      <div class="col-md-6 mb-4">
+
+                        <div class="form-outline">
+                          <input type="password" id="lastName" name="txtPassword" class="form-control form-control-lg" />
+                          <label class="form-label" for="lastName">Mật khẩu</label>
+                        </div>
+
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-6 mb-4 d-flex align-items-center">
+
+                        <div class="form-outline datepicker w-100">
+                          <input
+                            type="text"
+                            class="form-control form-control-lg"
+                            name="txtEmail"
+                            id="birthdayDate"
+                          />
+                          <label for="birthdayDate" class="form-label">Email</label>
+                        </div> 
+                      </div>
+                      <div class="col-md-6 mb-4 pb-2">
+
+                        <div class="form-outline">
+                          <select name="txtSex" id="emailAddress" class="form-control form-control-lg" />
                             <option value=""></option>
                             <option value="Nam">Nam</option>
                             <option value="Nu">Nữ</option>
-                        </select>
-                    </td>
-                </tr>
-            </table>
-            <input type="submit" value="Đăng ký" />
-            <input type="reset" value="Nhập lại" />
-        </form>
+                          </select>
+                          <label class="form-label" for="emailAddress">Giới tính</label>
+                        </div>
+
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-6 mb-4 pb-2">
+
+                        <div class="form-outline">
+                          <input type="text" id="emailAddress" name="txtFullname" class="form-control form-control-lg" />
+                          <label class="form-label" for="emailAddress">Họ tên</label>
+                        </div>
+
+                      </div>
+                      <div class="col-md-6 mb-4 pb-2">
+
+                        <div class="form-outline">
+                          <input type="text" id="phoneNumber" name="txtBirthday" class="form-control form-control-lg" />
+                          <label class="form-label" for="phoneNumber">Ngày sinh</label>
+                        </div>
+
+                      </div>
+                    </div>
+                    <div class="mt-4 pt-2">
+                      <input class="btn btn-primary btn-lg" type="submit" value="Đăng ký" />
+                      <input class="btn btn-primary btn-lg" type="reset" value="Nhập lại" />
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </body>
 </html>

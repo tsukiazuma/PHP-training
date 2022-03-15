@@ -49,7 +49,7 @@
     $emailExist = executeResult($sql);
     if (mysqli_num_rows($emailExist) > 0)
     {
-        alert "Email này đã có người dùng. Vui lòng chọn Email khác. <a href='javascript: history.go(-1)'>Trở lại</a>";
+        echo "Email này đã có người dùng. Vui lòng chọn Email khác. <a href='javascript: history.go(-1)'>Trở lại</a>";
         exit;
     }
     

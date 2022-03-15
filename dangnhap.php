@@ -33,7 +33,7 @@ if (isset($_POST['dangnhap']))
     }
 
     $_SESSION['username'] = $username;
-    echo "Xin chào " . $username . ". Bạn đã đăng nhập thành công. <a href='/'>Về trang chủ</a>";
+    header('location: trangchu.php');
     die();
 }
 ?>

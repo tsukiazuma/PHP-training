@@ -81,9 +81,11 @@
                       </div>
                     </div>
                     <div class="mt-4 pt-2">
-                      <input class="btn btn-primary btn-lg" type="submit" value="Đăng ký" />
+                      <input class="btn btn-primary btn-lg" type="submit" width="100px" value="Đăng ký" />
                       <input class="btn btn-primary btn-lg" type="reset" value="Nhập lại" />
                     </div>
+                    <br/>
+                    <a href="dangnhap.php" style="padding-top: 50px">Đăng nhập</a>
                   </form>
                 </div>
               </div>

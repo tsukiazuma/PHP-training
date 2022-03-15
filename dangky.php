@@ -14,7 +14,7 @@
               <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
                 <div class="card-body p-4 p-md-5">
                   <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Đăng ký</h3>
-                  <form action="xuly.php" method="POST">
+                  <form action='xuly.php' method='POST'>
 
                     <div class="row">
                       <div class="col-md-6 mb-4">
@@ -81,7 +81,7 @@
                       </div>
                     </div>
                     <div class="mt-4 pt-2">
-                      <input class="btn btn-primary btn-lg" type="submit" width="100px" value="Đăng ký" />
+                      <input class="btn btn-primary btn-lg" type="submit" name="dangky" value="Đăng ký" />
                       <input class="btn btn-primary btn-lg" type="reset" value="Nhập lại" />
                     </div>
                     <br/>

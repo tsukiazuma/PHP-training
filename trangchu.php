@@ -25,7 +25,6 @@
                          echo 'Click vào đây để <a href="dangnhap.php">Đăng nhập</a>';
                      }
                      ?>
-                  </form>
                 </div>
               </div>
             </div>

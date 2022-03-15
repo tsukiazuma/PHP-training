@@ -17,7 +17,7 @@ if (isset($_POST['dangnhap']))
      
     //Kiểm tra đã nhập đủ tên đăng nhập với mật khẩu chưa
     if (!$username || !$password) {
-        echo "Vui lòng nhập đầy đủ tên đăng nhập và mật khẩu. <a href='javascript: history.go(-1)'>Trở lại</a>";
+        echo ("<script LANGUAGE='JavaScript'>window.alert('Vui lòng nhập đầy đủ tên đăng nhập và mật khẩu.');window.location.href='dangnhap.php';</script>");
         exit;
     }
      
@@ -28,7 +28,7 @@ if (isset($_POST['dangnhap']))
     $sql = "SELECT username FROM member WHERE username='$username' and password='$password'";
     $userExist = executeResult($sql);
     if (mysqli_num_rows($userExist) == 0){
-        echo "Đăng nhập không thành công. Vui lòng kiểm tra lại. <a href='javascript: history.go(-1)'>Trở lại</a>";
+        echo ("<script LANGUAGE='JavaScript'>window.alert('Đăng nhập không thành công. Vui lòng kiểm tra lại.');window.location.href='dangnhap.php';</script>");
         exit;
     }
 
@@ -54,7 +54,7 @@ if (isset($_POST['dangnhap']))
 
                     <h3 class="mb-5">Đăng nhập</h3>
 
-                    <form action='dangnhap.php?do=login' method='POST'>
+                    <form action='dangnhap.php' method='POST'>
                         <div class="form-outline mb-4">
                           <input type="text" id="typeEmailX-2" name="txtUsername" class="form-control form-control-lg" />
                           <label class="form-label" for="typeEmailX-2">Tên đăng nhập</label>

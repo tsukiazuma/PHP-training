@@ -18,7 +18,8 @@
                     <?php 
                      if (isset($_SESSION['username']) && $_SESSION['username']){
                          echo 'Bạn đã đăng nhập với tên là '.$_SESSION['username']."<br/>";
-                         echo 'Click vào đây để <a href="dangxuat.php">Đăng xuất</a>';
+                         echo 'Click vào đây để <a href="dangxuat.php">Đăng xuất</a><br/>';
+                         echo 'Click vào đây để <a href="timkiem.php">Tìm kiếm</a>';
                      }
                      else{
                          echo 'Bạn chưa đăng nhập<br>';

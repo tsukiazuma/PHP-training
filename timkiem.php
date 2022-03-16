@@ -10,8 +10,9 @@
             <div class="col-lg-8 col-xl-6">
               <div class="card rounded-3">
                 <img src="https://static2.yan.vn/YanThumbNews/2167221/202005/89a62e26-c68d-4a09-bf7d-bb824c50978b.jpg" class="w-100" style="border-top-left-radius: .3rem; border-top-right-radius: .3rem;" alt="Sample photo">
+                <h4 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2"><a href="trangchu.php" style="padding-top: 25px">Trang chủ</a></h4>
                 <div class="card-body p-4 p-md-5">
-                  <h3 align="center" class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Tìm kiếm</h3>
+                  <h3 align="center" class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Tìm kiếm Username</h3>
                       <div align="center">
                         <form action="timkiem.php" method="get">
                             Tìm kiếm: <input type="text" name="timkiem" />

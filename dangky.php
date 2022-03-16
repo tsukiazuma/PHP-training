@@ -85,7 +85,7 @@
                       <input class="btn btn-primary btn-lg" type="reset" value="Nhập lại" />
                     </div>
                     <br/>
-                    <a href="dangnhap.php" style="padding-top: 50px">Đăng nhập</a>
+                    <a href="dangnhap.php" style="padding-top: 25px">Đăng nhập</a>
                   </form>
                 </div>
               </div>

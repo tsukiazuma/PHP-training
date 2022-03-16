@@ -1,3 +1,9 @@
+<?php
+    session_start();
+    if (!(isset($_SESSION['username']) && $_SESSION['username'])) {
+        echo ("<script LANGUAGE='JavaScript'>window.alert('Vui lòng đăng nhập');window.location.href='dangnhap.php';</script>");
+    }
+?>
 <html>
     <head>
         <title>Tìm kiếm</title>

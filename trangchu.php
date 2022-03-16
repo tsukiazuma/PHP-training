@@ -19,7 +19,9 @@
                      if (isset($_SESSION['username']) && $_SESSION['username']){
                          echo 'Bạn đã đăng nhập với tên là '.$_SESSION['username']."<br/>";
                          echo 'Click vào đây để <a href="dangxuat.php">Đăng xuất</a><br/>';
-                         echo 'Click vào đây để <a href="timkiem.php">Tìm kiếm</a>';
+                         echo 'Click vào đây để <a href="timkiem.php">Tìm kiếm</a><br/>';
+                         echo 'Click vào đây để <a href="upfile.php">Up file</a><br/>';
+                         echo 'Click vào đây để <a href="downfile.php">Down file</a><br/>';
                      }
                      else{
                          echo 'Bạn chưa đăng nhập<br>';

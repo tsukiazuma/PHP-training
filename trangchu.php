@@ -22,6 +22,7 @@
                          echo 'Click vào đây để <a href="timkiem.php">Tìm kiếm</a><br/>';
                          echo 'Click vào đây để <a href="upfile.php">Up file</a><br/>';
                          echo 'Click vào đây để <a href="downfile.php">Down file</a><br/>';
+                         echo 'Click vào đây để <a href="binhluan.php">Bình luận</a><br/>';
                      }
                      else{
                          echo 'Bạn chưa đăng nhập<br>';

@@ -97,8 +97,7 @@
                           echo "Bạn chưa bình luận";
                           exit;
                         }
-                        $date = date('Y-m-d H:i:s');
-                        $sql = "INSERT INTO comment(username, date, message) VALUES ('" . $username . "','" . $date . "','" . $comment . "')";
+                        $sql = "INSERT INTO comment(username, message) VALUES ('" . $username . "','" . $comment . "')";
                         $result = execute($sql);
                         echo ("<script LANGUAGE='JavaScript'>;window.location.href='binhluan.php';</script>");
                         if (! $result) {

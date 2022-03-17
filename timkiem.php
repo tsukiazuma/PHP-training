@@ -59,12 +59,10 @@
                                     echo '<table border="1" cellspacing="0" cellpadding="10">';
                                     while ($row = mysqli_fetch_assoc($sql)) {
                                         echo '<tr>';
-                                            echo "<td>{$row['username']}</td>";
-                                            echo "<td>{$row['password']}</td>";
-                                            echo "<td>{$row['email']}</td>";
-                                            echo "<td>{$row['fullname']}</td>";
-                                            echo "<td>{$row['birthday']}</td>";
-                                            echo "<td>{$row['sex']}</td>";
+                                            echo "<td>Username: {$row['username']}</td>";
+                                            echo "<td>Email: {$row['email']}</td>";
+                                            echo "<td>Họ tên: {$row['fullname']}</td>";
+                                            echo "<td>Ngày sinh: {$row['birthday']}</td>";
                                         echo '</tr>';
                                     }
                                     echo '</table>';

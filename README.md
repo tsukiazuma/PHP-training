@@ -28,6 +28,14 @@
 - Đăng ký gồm dangky.php - form để đăng ký và xyly.php để xử lý đăng ký member
 
 ```php
+//Lấy dữ liệu từ file dangky.php
+    $username   = addslashes($_POST['txtUsername']);
+    $password   = addslashes($_POST['txtPassword']);
+    $email      = addslashes($_POST['txtEmail']);
+    $fullname   = addslashes($_POST['txtFullname']);
+    $birthday   = addslashes($_POST['txtBirthday']);
+    $sex        = addslashes($_POST['txtSex']);
+
 //Kiểm tra người dùng đã nhập liệu đầy đủ chưa
     if (!$username || !$password || !$email || !$fullname || !$birthday || !$sex)
     {
@@ -72,6 +80,18 @@
     //Lưu thông tin thành viên vào bảng
     $addmember = executeResult("INSERT INTO member (username, password, email, fullname, birthday, sex) VALUE ('{$username}', '{$password}', '{$email}', '{$fullname}', '{$birthday}', '{$sex}')");
 ```
+- Hàm addslashes chèn kí tự \\ vào kí tự hoặc chuỗi kí tự để trách sql injection
+    Ví dụ:
+	```php
+	echo addslashes('Các bạn đang đọc bài tại "freetuts", chúc các bạn học PHP tốt');
+	echo addslashes("Các bạn đang đọc bài tại 'freetuts', chúc các bạn học PHP tốt");
+	```
+    Kết quả trả về:
+    ```php
+	Các bạn đang đọc bài tại \"freetuts\", chúc các bạn học PHP tốt
+	Các bạn đang đọc bài tại \'freetuts\', chúc các bạn học PHP tốt
+    ```
+
 - Hàm mysqli_num_rows trả về số hàng trong tập hợp kết quả truyền vào.
 - Hàm preg_match kiểm tra so sánh với pattern là /(0[1-9]|1[0-9]|2[0-9]|3[01])[\/-](0[1-9]|1[0-2])[\/-](19[5-9][0-9]|20[0-9][0-9])/ và subject là $email rồi trả về kết quả.
 

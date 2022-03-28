@@ -9,28 +9,20 @@
 - Gồm ketnoi.php và define.php
 - Define.php khai báo các host, database, username, password
 - Ketnoi.php gồm các hàm thực thi sql
-```php
-	function execute($sql){
-	        // Kết nối database
-	        $conn = mysqli_connect(HOST,USERNAME, PASSWORD,DATABASE);
-	        mysqli_set_charset($conn,'utf8');
-	        // Truy vấn
-	        $resultset = mysqli_query($conn,$sql);
-	        // Đóng kết nối
-	        mysqli_close($conn);
-	        return $resultset;
-	    }
-	function executeResult($sql){
-	        $data = null;
-	        // Mở kết nối
-	        $conn = mysqli_connect(HOST,USERNAME, PASSWORD, DATABASE);
-	        mysqli_set_charset($conn,'utf8');
-	        // Truy vấn
-	        $resultset = mysqli_query($conn,$sql);      
-	        mysqli_close($conn);
-	        return $resultset;
-	    }
-```
+    ```php
+        function executeResult($sql){
+                // Mở kết nối
+                $conn = mysqli_connect(HOST,USERNAME, PASSWORD, DATABASE);
+                mysqli_set_charset($conn,'utf8');
+                // Truy vấn
+                $resultset = mysqli_query($conn,$sql);      
+                mysqli_close($conn);
+                return $resultset;
+            }
+    ```
+- Hàm mysqli_connect tạo kết nối tới database thông qua các tham số HOST, USERNAME, PASSWORDm DATABASE.
+- Hàm mysqli_set_charset với tham số utf8 để chọn bảng mã tiếng việt là mặc định.
+- Hàm mysqli_query  thực hiện truy vấn và trả về đối tượng kết quả sql
 
 ## Đăng nhập/Đăng ký
 - Đăng ký gồm dangky.php - form để đăng ký và xyly.php để xử lý đăng ký member
@@ -55,7 +47,7 @@
     }
           
     //Kiểm tra email có đúng định dạng hay không
-    if (!preg_match ("/^([a-zA-Z0-9])+([a-zA-Z0-9\._-])*@([a-zA-Z0-9_-])+\.[A-Za-z]{2,6}$/", $email))
+    if (!preg_match("/^([a-zA-Z0-9])+([a-zA-Z0-9\._-])*@([a-zA-Z0-9_-])+\.[A-Za-z]{2,6}$/", $email))
     {
         echo ("<script LANGUAGE='JavaScript'>window.alert('Email này không hợp lệ. Vui long nhập email khác.');window.location.href='dangky.php';</script>");
         exit;
@@ -80,6 +72,9 @@
     //Lưu thông tin thành viên vào bảng
     $addmember = executeResult("INSERT INTO member (username, password, email, fullname, birthday, sex) VALUE ('{$username}', '{$password}', '{$email}', '{$fullname}', '{$birthday}', '{$sex}')");
 ```
+- Hàm mysqli_num_rows trả về số hàng trong tập hợp kết quả truyền vào.
+- Hàm preg_match kiểm tra so sánh với pattern là /(0[1-9]|1[0-9]|2[0-9]|3[01])[\/-](0[1-9]|1[0-2])[\/-](19[5-9][0-9]|20[0-9][0-9])/ và subject là $email rồi trả về kết quả.
+
 - Đăng nhập gồm dangnhap.php bao gồm form lẫn xử lý đăng nhập
 ```php
 	//Khởi tạo session
@@ -102,6 +97,7 @@
         exit;
     }
 ```
+- Hàm session_start để bắt đầu một session.
 
 ## Tìm kiếm
 - Timkiem.php gồm form lẫn xử lý tìm kiếm bằng username
@@ -122,7 +118,7 @@
         // Kết nối sql
         require_once('ketnoi.php');
         // Thực thi câu truy vấn
-        $sql = execute($query);
+        $sql = executeResult($query);
         // Đếm số đong trả về trong sql.
         $num = mysqli_num_rows($sql);
         // Nếu có kết quả thì hiển thị, ngược lại thì thông báo không tìm thấy kết quả
@@ -149,6 +145,7 @@
         }
     }
 ```
+- Hàm mysqli_fetch_assoc sẽ tìm và trả về kết quả theo hàng dưới dạng một mảng kết hợp.
 
 ## Upload/Dowload file
 - Upload gồm upfile.php chứa form và xuliup.php để xử lý up file
@@ -238,7 +235,7 @@
 
     // Load file từ forder upload file lúc nãy
 	$sql = "SELECT * FROM file";
-    $result = execute($sql);
+    $result = executeResult($sql);
     $files = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
     // Xuất ra màn hình các file đã load đc
@@ -264,7 +261,7 @@
 
     // Xử lý và load các bình luận của blog
     $sql = "SELECT * FROM comment";
-    $result = execute($sql);
+    $result = executeResult($sql);
     $files = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
     <?php $i = 1;

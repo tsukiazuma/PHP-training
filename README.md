@@ -1,5 +1,5 @@
-Người thực hiện: Trần Ngọc Nam
-Ngày thực hiện: 14-18/3/2022
+### Người thực hiện: Trần Ngọc Nam
+### Ngày thực hiện: 14-18/3/2022
 # PHP-training
 1. [Kết nối database](#1)
 2. [Trang đăng nhập/đăng ký có kết nối database](#2)

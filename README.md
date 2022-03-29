@@ -1,13 +1,13 @@
 Người thực hiện: Trần Ngọc Nam
 Ngày thực hiện: 14-18/3/2022
 # PHP-training
-- Kết nối database
-- Trang đăng nhập/đăng ký có kết nối database
-- Chức năng tìm kiếm (username)
-- Chức năng download/upload file
-- Chức năng cho người khác comment vào Blog (comment vào hình gắn tĩnh trên web)
+1. [Kết nối database](#1)
+2. [Trang đăng nhập/đăng ký có kết nối database](#2)
+3. [Chức năng tìm kiếm (username)](#3)
+4. [Chức năng download/upload file](#4)
+5. [Chức năng cho người khác comment vào Blog (comment vào hình gắn tĩnh trên web)](#5)
 
-## Kết nối Database
+## Kết nối Database<a name="1"></a>
 - Gồm ketnoi.php và define.php
 - Define.php khai báo các host, database, username, password
 - Ketnoi.php gồm các hàm thực thi sql
@@ -26,7 +26,7 @@ Ngày thực hiện: 14-18/3/2022
 - Hàm mysqli_set_charset với tham số utf8 để chọn bảng mã tiếng việt là mặc định.
 - Hàm mysqli_query  thực hiện truy vấn và trả về đối tượng kết quả sql
 
-## Đăng nhập/Đăng ký
+## Đăng nhập/Đăng ký<a name="2"></a>
 - Đăng ký gồm dangky.php - form để đăng ký và xyly.php để xử lý đăng ký member
 
 ```php
@@ -121,7 +121,7 @@ Ngày thực hiện: 14-18/3/2022
 ```
 - Hàm session_start để bắt đầu một session.
 
-## Tìm kiếm
+## Tìm kiếm<a name="3"></a>
 - Timkiem.php gồm form lẫn xử lý tìm kiếm bằng username
 ```php
 	// Phải đăng nhập để tìm kiếm
@@ -169,7 +169,7 @@ Ngày thực hiện: 14-18/3/2022
 ```
 - Hàm mysqli_fetch_assoc sẽ tìm và trả về kết quả theo hàng dưới dạng một mảng kết hợp.
 
-## Upload/Dowload file
+## Upload/Dowload file<a name="4"></a>
 - Upload gồm upfile.php chứa form và xuliup.php để xử lý up file
 ```php
 	// Yêu cầu đăng nhập để up file
@@ -298,7 +298,7 @@ Ngày thực hiện: 14-18/3/2022
 - Hàm basename trả về tên tệp từ đường dẫn.
 - Hàm mysqli_fetch_all tìm và trả về tất cả các kết quả dưới dạng một mảng kết hợp.
 
-## Comment vào blog có sẵn
+## Comment vào blog có sẵn<a name="5"></a>
 - Binhluan.php bao gồm form lẫn xử lý
 ```php
 	// Yêu cầu đăng nhập để comment

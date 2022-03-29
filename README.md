@@ -1,3 +1,5 @@
+Người thực hiện: Trần Ngọc Nam
+Ngày thực hiện: 14-18/3/2022
 # PHP-training
 - Kết nối database
 - Trang đăng nhập/đăng ký có kết nối database
@@ -214,7 +216,7 @@
 
     // Upload
     if($flag){
-        move_uploaded_file($_FILES['upload_file']['tmp_name'], $file_path);
+        move_uploaded_file($_FILES['upload_file']['tmp_name'], $file_path); //tên tệp của tệp đã tải lên, vị trí mới cho tệp
         require_once('ketnoi.php');
         $username = $_SESSION['username'];
         $file = $_FILES['upload_file']['name'];
@@ -226,6 +228,30 @@
         echo ' - Upload thất bại';
     }
 ```
+- Hàm getimagesize trả về một phần tử mảng với chiều cao, chiều rộng, loại, loại MIME(dạng img/png) của hình ảnh,...
+  Ví dụ:
+    ```php
+    getimagesize(file_name, img_info)
+
+    Với:
+    file_name: Hình ảnh tệp tức là đường dẫn hình ảnh.
+    img_info: Trích xuất một số thông tin mở rộng từ tệp hình ảnh. Chỉ hỗ trợ các tệp JFIF.
+    ```
+- Hàm pathinfo trả về thông tin về đường dẫn tệp.
+  Ví dụ:
+  ```php
+    pathinfo(path, options)
+
+    Với:
+    path: đường dẫn cần lấy thông tin.
+    options: chỉ định phần tử được trả về (có thể có hoặc không)
+        PATHINFO_DIRNAME - chỉ trả lại tên dirname
+        PATHINFO_BASENAME - chỉ trả lại tên cơ sở
+        PATHINFO_EXTENSION - chỉ trả lại phần mở rộng
+        PATHINFO_FILENAME - chỉ trả lại tên tệp
+    ```
+- Hàm move_uploaded_file di chuyển tệp đã tải lên đến đích mới.
+
 - Downfile.php chứa form lẫn xử lý download
 ```php
 	// Yêu cầu đăng nhập để download
@@ -269,6 +295,8 @@
         </tr>
     <?php endforeach; ?>
 ```
+- Hàm basename trả về tên tệp từ đường dẫn.
+- Hàm mysqli_fetch_all tìm và trả về tất cả các kết quả dưới dạng một mảng kết hợp.
 
 ## Comment vào blog có sẵn
 - Binhluan.php bao gồm form lẫn xử lý
